@@ -1,15 +1,11 @@
 package bank;
 
-import java.util.Scanner;
 
 public class tester {
 
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		
-		System.out.print("Enter a character");
-		char a = scan.next().charAt(0);
-		System.out.print("value = " + a);
+		BankAccount test = new BankAccount("Gbemi", "382922", 19999);
+		test.menu();
 	}
 
 }
