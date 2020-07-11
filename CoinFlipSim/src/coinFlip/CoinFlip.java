@@ -10,48 +10,33 @@ public class CoinFlip {
 		numOfFlip = n;
 	}
 	
-	public void headOrTail() {
+	public char headOrTail() {
 		double oneOrZero = Math.round(Math.random());
 		if (oneOrZero == 1.0) {
 			this.headOrTail = 'H';
 		} 
 		else this.headOrTail = 'T';
+		return this.headOrTail;
 	}
 	
 	
-	public int numOfHead() {
-		int countH;
-		System.out.println(this.numOfFlip);
-		countH = 0;
-		for (int i = 1; i <= this.numOfFlip; i++) {
-			if (this.headOrTail == 'H') {
-				countH = countH + 1;
-			}
-		}	
-		System.out.println(countH);
-		return countH;
-	}
-		
-	public int numOfTail() {
+	
+	public String numOfHeadandTail() {
+		int countH = 0;
 		int countT = 0;
+		
 		for (int i = 1; i <= this.numOfFlip; i++) {
-			if (this.headOrTail == 'T') {
-				countT =+ 1;
-			}	
+			if (headOrTail() == 'H') {
+				countH += 1;
+			} 
+			else countT += 1;
 		}	
-		return countT;
+		
+		return "The number of heads: " + countH + "\n"
+		+ "The number of tails: " + countT;
 	}
 	
-	
-	@Override
-	public String toString() {
-		return "The number of heads: " + numOfHead() + "\n"
-				+ "The number of tails: " + numOfTail();
-	}
 
-	
-
-	
 	
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -60,7 +45,7 @@ public class CoinFlip {
 		int flip = input.nextInt();
 		
 		CoinFlip newCase = new CoinFlip(flip);
-		System.out.print(newCase.numOfHead());
+		System.out.print(newCase.numOfHeadandTail());
 	}
 
 }
