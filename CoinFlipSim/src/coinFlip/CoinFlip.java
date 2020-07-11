@@ -12,10 +12,9 @@ public class CoinFlip {
 	
 	public char headOrTail() {
 		double oneOrZero = Math.round(Math.random());
-		if (oneOrZero == 1.0) {
-			this.headOrTail = 'H';
-		} 
+		if (oneOrZero == 1.0) this.headOrTail = 'H';
 		else this.headOrTail = 'T';
+		
 		return this.headOrTail;
 	}
 	
@@ -26,14 +25,11 @@ public class CoinFlip {
 		int countT = 0;
 		
 		for (int i = 1; i <= this.numOfFlip; i++) {
-			if (headOrTail() == 'H') {
-				countH += 1;
-			} 
+			if (headOrTail() == 'H') countH += 1;
 			else countT += 1;
 		}	
 		
-		return "The number of heads: " + countH + "\n"
-		+ "The number of tails: " + countT;
+		return "Number of heads: " + countH + "\n" + "Number of tails: " + countT;
 	}
 	
 
